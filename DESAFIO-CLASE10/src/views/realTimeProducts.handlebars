@@ -1,0 +1,52 @@
+<div class="container">
+    <h2>Productos en tiempo real</h2>
+    <div class="container">
+        <div class="row">
+            {{!-- -----------------FORMULARIO PARA CREAR PRODUCTOS---------------------------- --}}
+            <div class="col-sm">
+                <h3>CREATE NEW PRODUCT</h3>
+                <form id="formCreateProduct">
+                    <label for="title" class="form-label">Title</label> <input type="text" class="form-control" id="title">
+                    <label for="description" class="form-label">Description</label> <input type="text" class="form-control" id="description">
+                    <label for="code" class="form-label">Code</label> <input type="text" class="form-control" id="code">
+                    <label for="price" class="form-label">Price</label> <input type="number" class="form-control" id="price">
+                    <label for="stock" class="form-label">Stock</label> <input type="number" class="form-control" id="stock">
+                    <label for="thumbnail" class="form-label">thumbnail</label> <input type="text" class="form-control" id="thumbnail">
+                <button type="submit" class="btn btn-primary mt-3">CREATE</button>
+                </form>
+            </div>
+            {{!-- --------------------------------FORMULARIO PARA ELIMINAR PRODUCTOS---------- --}}
+            <div class="col-sm">
+                <h3>DELETE A  PRODUCT</h3>
+                <form id="formDeleteProduct">
+                    <label for="prodId" class="form-label">INSER PRODUCT ID</label> <input type="text" class="form-control" id="prodId">
+                <button type="submit" class="btn btn-primary mt-3">DELETE</button>
+                </form>
+            </div>
+        </div>
+        {{!-- --------------------------------------MUESTRA PRODUCTOS ---------------------------- --}}
+        <div class="row">
+
+            <div class="col-12" id="productoss">
+                <table class="table table-striped" id="lista">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>CODE</td>
+                            <td>TITLE</td>
+                            <td>PRICE</td>
+                            <td>STOCK</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{!-- ----------------------------------------------------------------------------------- --}}
+    </div>
+</div>
+    
+<script src="/socket.io/socket.io.js"></script>
+<script src="index.js"></script>
