@@ -1,9 +1,27 @@
 <div class="container">
-    <h2>Listado de productos</h2>
+    <h2>LISTA DE PRODUCTOS</h2>
+        {{!-- --------------------------------------MUESTRA PRODUCTOS ---------------------------- --}}
+        <div class="row">
 
-    <p id="products"></p>
+            <div class="col-12" id="productoss">
+                <table class="table table-striped" id="lista">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>CODE</td>
+                            <td>TITLE</td>
+                            <td>PRICE</td>
+                            <td>STOCK</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
 
-    <a href="./realTimeProducts">Crear nuevo producto</a>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{!-- ----------------------------------------------------------------------------------- --}}
 </div>
+    
 <script src="/socket.io/socket.io.js"></script>
 <script src="index.js"></script>
