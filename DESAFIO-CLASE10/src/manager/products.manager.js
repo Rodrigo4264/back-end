@@ -10,7 +10,7 @@ export default class Productsmanager{
         if(fs.existsSync(this.path)){
             const products = await fs.promises.readFile(this.path,'utf-8')
             const productsjs =JSON.parse(products)
-            return productsjs 
+            return productsjs  
         } else return []  
         }
         catch(error){
@@ -75,7 +75,7 @@ export default class Productsmanager{
      async updateProduct(id, updateprduct){
         try {
             const productsFile = await this.getProducts()
-
+            
             const productindex = productsFile.findIndex(prod=>prod.id===id)
             if(productindex!== -1){
                 productsFile[productindex] = {id,...updateprduct}
@@ -93,10 +93,9 @@ export default class Productsmanager{
      async deleteProduct(id){
         try {
             const productsFile = await this.getProducts()
-
-            const productindex = productsFile.findIndex(prod=>prod.id===id)
+            const productindex = productsFile.findIndex(prod=>prod.id===Number(id))
             if(productindex!== -1){
-                const deleteproduct = productsFile.splice(productindex,1)
+                const deleteproduct = productsFile.splice(productindex,1)  
                 await fs.promises.writeFile(this.path, JSON.stringify(productsFile))
             }else{
                 return 'el ID no correspondo a un producto'
