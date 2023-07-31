@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Iphone 14",
+    "description": "El iphone",
+    "price": 900,
+    "category": "phones",
+    "code": "iphone-14",
+    "stock": 50,
+    "thumbnails": ["1690207789437-493591471-iphone-12.jpeg"],
+    "status": true
+  }
+]
